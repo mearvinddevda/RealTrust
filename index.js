@@ -1,4 +1,5 @@
 import { log } from "console";
+import cors from 'cors';
 import dotenv from "dotenv"
 import express from "express";
 import projectRoute from "./router/project.route.js"
@@ -8,6 +9,15 @@ import subscriberRouter from "./router/subscriber.route.js"
 import contactFormRouter from "./router/contactform.route.js"
 const app = express();
 dotenv.config({});
+const corsOptions ={
+    origin:'http://localhost:5173',
+    credentials:true
+}
+
+app.get("/",(req,res)=>{
+    res.status(200).send("hello")
+})
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
