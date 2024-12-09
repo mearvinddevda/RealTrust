@@ -9,10 +9,19 @@ import subscriberRouter from "./router/subscriber.route.js"
 import contactFormRouter from "./router/contactform.route.js"
 const app = express();
 dotenv.config({});
-const corsOptions ={
-    
-    credentials:true
-}
+const corsOptions = {
+    origin:'https://real-trust-front-end-y9p9.vercel.app', // Specify the frontend origin explicitly
+    credentials: true, // Allow credentials (cookies, headers, etc.)
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow only certain methods
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'] // Allow certain headers
+  };
+  app.options('*', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://real-trust-front-end-y9p9.vercel.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.status(200).end();
+  });  
 
 app.get("/",(req,res)=>{
     res.status(200).send("hello")
