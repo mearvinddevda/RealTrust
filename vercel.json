@@ -9,9 +9,6 @@
 		}
 	],
     "functions": {
-    "controller/test.js": {
-      "maxDuration": 30 
-    },
     "controller/*.js": {
       "maxDuration": 55
     }
