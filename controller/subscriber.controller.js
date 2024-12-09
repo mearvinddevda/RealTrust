@@ -2,10 +2,8 @@ import { Subscriber } from "../models/subscriber.model.js";
 
 export const createSubscriber = async ( req ,res) =>{
 	try {
-		console.log(req.body);
 		
 		const {email} = req.body ;
-		console.log(email);
 		
 		if(!email)
 		{
@@ -13,7 +11,8 @@ export const createSubscriber = async ( req ,res) =>{
 				message:"something is missing",
 				success:false,
 			})
-		}	
+		}
+		
 		await Subscriber.create({
             email ,
             

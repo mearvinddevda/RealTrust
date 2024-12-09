@@ -32,8 +32,8 @@ app.use("/contactdetails",contactFormRouter);
 app.use("/subscribe",subscriberRouter);
 
 
-connectDB();
 app.listen(PORT,()=>{
+    connectDB();
     console.log(`Server in running at fipr Heart at ${PORT}`);
     
 })
