@@ -18,7 +18,7 @@ app.get("/",(req,res)=>{
     res.status(200).send("hello")
 })
 app.use(cors(corsOptions));
-
+app.options('*', cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
