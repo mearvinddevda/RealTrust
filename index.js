@@ -10,7 +10,7 @@ import contactFormRouter from "./router/contactform.route.js"
 const app = express();
 dotenv.config({});
 const corsOptions ={
-    origin:'http://localhost:5173',
+    origin:'https://real-trust-front-end-y9p9.vercel.app',
     credentials:true
 }
 
