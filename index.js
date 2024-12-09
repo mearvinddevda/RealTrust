@@ -11,6 +11,7 @@ const app = express();
 dotenv.config({});
 const corsOptions ={
     origin:'https://real-trust-front-end-y9p9.vercel.app',
+    
     credentials:true
 }
 
@@ -21,6 +22,13 @@ app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.options('*', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://real-trust-front-end-y9p9.vercel.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.status(200).end(); // Send the 200 response for preflight request
+});
 
 const PORT = process.env.PORT || 3000;
 
