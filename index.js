@@ -10,7 +10,9 @@ import contactFormRouter from "./router/contactform.route.js"
 const app = express();
 dotenv.config({});
 const corsOptions = {
-  origin: 'https://real-trust-front-end-y9p9.vercel.app',
+  origin: 
+    'https://real-trust-front-end-y9p9.vercel.app'  ,
+
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],

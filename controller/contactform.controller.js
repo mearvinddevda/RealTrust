@@ -6,8 +6,8 @@ import { ContactForm } from "../models/contactform.model.js";
 
 export const GetContactDetails = async ( req ,res) =>{
 	try {
-		const {fullname , email , mobile ,city} = req.body ;
-		if(!fullname , !email , !mobile ,!city)
+		const {fullName , email , mobile ,city} = req.body ;
+		if(!fullName , !email , !mobile ,!city)
 		{
 			return res.status(400).json({
 				message:"something is missing",
@@ -15,7 +15,7 @@ export const GetContactDetails = async ( req ,res) =>{
 			})
 		}	
 		await ContactForm.create({
-			fullname,
+			fullName,
             email ,
             mobile,
             city
