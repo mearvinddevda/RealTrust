@@ -9,8 +9,10 @@ import subscriberRouter from "./router/subscriber.route.js"
 import contactFormRouter from "./router/contactform.route.js"
 const app = express();
 dotenv.config({});
-const corsOptions = {  
-  origin: 'http://localhost:5173',
+const corsOptions = {
+  origin: 'https://real-trust-front-end-y9p9.vercel.app',  
+  
+  // origin: 'http://localhost:5173',
 
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
