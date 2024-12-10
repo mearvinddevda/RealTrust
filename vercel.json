@@ -6,7 +6,12 @@
 			"src": "/(.*)",
 			"dest": "/"
 		}
-	]
+	],
+	"functions": {
+    "controller/*.js": {
+      "maxDuration": 55
+    }
+  }
 
 
 }
